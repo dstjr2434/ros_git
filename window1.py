@@ -1,4 +1,4 @@
-# 실시간 카메라 최종본
+# 실시간 카메라 최종본(웹캠용)
 
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
@@ -30,8 +30,9 @@ class Window1(QWidget):
         self.setLayout(self.grblay)
         self.lbl_video = QLabel()
 
-        self.lbl_video.setStyleSheet("background-Color : white")
+        self.lbl_video.setStyleSheet("background-Color : black")
         self.grblay.addWidget(self.lbl_video)
+        
         self.resize(self.parent.window1.width(),self.parent.window1.height())
         # self.resize(1280,720)
         # self.show()
@@ -40,8 +41,9 @@ class Window1(QWidget):
     def setImage(self, image):
         
         pixmap = QPixmap(image)
-        
+       
         self.lbl_video.setPixmap(pixmap)
+        self.lbl_video.setAlignment(Qt.AlignCenter)
 
 
 #동영상 쓰레드
@@ -58,12 +60,15 @@ class VideoWorker(QThread):#QThread는 gui가 꺼지면, 같이 쓰레드가 종
         
         cap = cv2.VideoCapture(0)#1280 * 720 1.778
         # cap = cv2.VideoCapture(2)#1920 * 1080
-        # cap.set(3, 800)
-        # cap.set(4, 450)
-
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH,5000)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT,5000)
+        self.width=cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+        self.height=cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+        
+        self.width=int(self.width)
+        self.height=int(self.height)
         # 부모의 너비,높이 가져오기
         width=self.parent.width()
-        print(width)
         height=self.parent.height()
 
         while cap.isOpened() and self.parent:
@@ -74,10 +79,12 @@ class VideoWorker(QThread):#QThread는 gui가 꺼지면, 같이 쓰레드가 종
                 pass
 
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            frame=cv2.resize(frame,dsize=(width,int(width/1.777)),interpolation=cv2.INTER_AREA)
-            # print(width,int(width/1.777))
+            # frame=cv2.resize(frame,dsize=(width,int(width/1.777)),interpolation=cv2.INTER_AREA)
+            frame=cv2.resize(frame,dsize=(self.width,self.height),interpolation=cv2.INTER_AREA)
             tmpImage = QImage(frame.data, frame.shape[1], frame.shape[0], QImage.Format_RGB888)
-            self.changePixmap.emit(tmpImage)
+            p = tmpImage.scaled(width, height, Qt.KeepAspectRatio)
+            # self.changePixmap.emit(tmpImage)
+            self.changePixmap.emit(p)
             
     def stop(self):
         
