@@ -15,12 +15,12 @@ from PyQt5.QtCore import *
 from sensor_msgs.msg import Image
 
 
-class Window1(QWidget):
-    
-    def __init__(self):
+class Window11(QWidget):
+
+    def __init__(self,parent):
         super().__init__()        
         # super(Window1, self).__init__()
-        rospy.init_node("Image_node")
+        # rospy.init_node("Image_node")
         self.cam = None
         rospy.Subscriber("camera",Image,self.callback)
 
@@ -31,7 +31,7 @@ class Window1(QWidget):
         self.initUI()
 
     def initUI(self):
-        # self.stella_image=Nodo()
+  
         self.grblay = QHBoxLayout()
         self.setLayout(self.grblay)
         self.lbl_video = QLabel()
@@ -40,28 +40,29 @@ class Window1(QWidget):
         self.grblay.addWidget(self.lbl_video)
         # self.resize(self.parent.window1.width(),self.parent.window1.height())
         self.resize(1280,720)
-        self.show()
+        # self.show()
 
     def callback(self, msg):
         # rospy.loginfo('Image received...')
         imageArray = np.frombuffer(msg.data, dtype=np.uint8).reshape(msg.height, msg.width, -1)
-        frame = cv2.cvtColor(imageArray, cv2.COLOR_BGR2RGB)
-        self.cam = frame
+        self.frame = cv2.cvtColor(imageArray, cv2.COLOR_BGR2RGB)
+        # frame = cv2.resize(frame,dsize=(msg.width,msg.height),interpolation=cv2.INTER_AREA)
+        self.cam = self.frame
 
         if self.cam is not None:
             self.ThreadVideo.start()
             
 
-        print(self.cam)
+        # print(self.cam)
         # print(msg)
 
 
     @pyqtSlot(QImage)
     def setImage(self, image):
         
-        pixmap = QPixmap(image)
-        
-        self.lbl_video.setPixmap(pixmap)
+        self.__pixmap = QPixmap(image)
+        self.lbl_video.setPixmap(self.__pixmap)
+        self.lbl_video.setAlignment(Qt.AlignCenter)
 
 
 #동영상 쓰레드
@@ -78,7 +79,7 @@ class VideoWorker(QThread):#QThread는 gui가 꺼지면, 같이 쓰레드가 종
 
     def run(self):
 
-            print(self.parent.cam)
+            # print(self.parent.cam)
             tmpImage = self.parent.cam
             tmpImage = QImage(tmpImage, tmpImage.shape[1], tmpImage.shape[0], QImage.Format_RGB888)
             self.changePixmap.emit(tmpImage)
@@ -95,5 +96,5 @@ class VideoWorker(QThread):#QThread는 gui가 꺼지면, 같이 쓰레드가 종
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
-    ex = Window1()
+    ex = Window11()
     sys.exit(app.exec_())
