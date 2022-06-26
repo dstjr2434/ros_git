@@ -29,11 +29,10 @@ class Window1(QWidget):
         self.grblay = QHBoxLayout()
         self.setLayout(self.grblay)
         self.lbl_video = QLabel()
-
         self.lbl_video.setStyleSheet("background-Color : black")
         self.grblay.addWidget(self.lbl_video)
         
-        self.resize(self.parent.window1.width(),self.parent.window1.height())
+        # self.resize(self.parent.width(),self.parent.height())
         # self.resize(1280,720)
         # self.show()
 
@@ -68,8 +67,8 @@ class VideoWorker(QThread):#QThread는 gui가 꺼지면, 같이 쓰레드가 종
         self.width=int(self.width)
         self.height=int(self.height)
         # 부모의 너비,높이 가져오기
-        width=self.parent.width()
-        height=self.parent.height()
+        # width=self.parent.width()
+        # height=self.parent.height()
 
         while cap.isOpened() and self.parent:
             ret, frame = cap.read()
@@ -82,7 +81,7 @@ class VideoWorker(QThread):#QThread는 gui가 꺼지면, 같이 쓰레드가 종
             # frame=cv2.resize(frame,dsize=(width,int(width/1.777)),interpolation=cv2.INTER_AREA)
             frame=cv2.resize(frame,dsize=(self.width,self.height),interpolation=cv2.INTER_AREA)
             tmpImage = QImage(frame.data, frame.shape[1], frame.shape[0], QImage.Format_RGB888)
-            p = tmpImage.scaled(width, height, Qt.KeepAspectRatio)
+            p = tmpImage.scaled(self.height, self.width, Qt.KeepAspectRatio,Qt.SmoothTransformation)
             # self.changePixmap.emit(tmpImage)
             self.changePixmap.emit(p)
             
