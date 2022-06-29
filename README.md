@@ -27,6 +27,7 @@
 > 내가 맡은 기능에 대한 기술스택
 
 Ros버전
+
 linux-ubuntu 18.04
 python 3.6.9버전
 
