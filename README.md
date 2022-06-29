@@ -26,18 +26,40 @@
 
 > 내가 맡은 기능에 대한 기술스택
 
-Ros버전
-
+Ros1
 linux-ubuntu 18.04
 python 3.6.9버전
+pyqt5
+
 
 > 요구명서세
+-기능 요구사항(목적,요구,세부사항)
+
+-설계 제약사항(pyqt5 이상,
+
+- 소프트웨어 시스템 속성
 
 > 트러블슈팅
 
 > 의존성파일
 
-내가 맡은 파트에 대한 기술스택 
+구글 catographer
+stella n2
+
+>실행
+
+>참고자료
+https://github.com/ntrexlab/STELLA_ODROID_C4
+https://github.com/ntrexlab/STELLA_REMOTE_PC_N2
+https://makingrobot.tistory.com/134
+https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/
+
+
+
+
+
+
+
 
 git에 저장되어있는 파일들은 프로젝트의 전체소스코드가 아닌 git opensource를 활용한 예시들 제가 추가적으로 구현한 것들입니다.
 
