@@ -79,7 +79,9 @@ opencv-python==4.2.0.32
 *stella n2
 
 >실행예시
-<img src ="https://github.com/dstjr2434/ros_git/blob/master/wallFollow.gif" width="200" height ="400/>
+
+
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/wallFollow.gif" width="200" height ="400/>
 
 
 >참고자료
