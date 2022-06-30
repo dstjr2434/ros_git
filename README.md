@@ -75,22 +75,42 @@ opencv-python==4.2.0.32
 
 
 > 의존성파일
-*구글 catographer
-*stella n2
+
+구글 catographer
+
+stella n2
 
 >실행예시
 
+ ### slam-pc 구현화면
+ 
 <img src = "https://github.com/dstjr2434/ros_git/blob/master/SLAM.gif" width="400" height ="400"/>
+
+ ### wall-follower 실제구현영상
+
 <img src = "https://github.com/dstjr2434/ros_git/blob/master/wallFollow.gif" width="400" height ="400"/>
+
+### move 2 destination구현영상
+
 <img src = "https://github.com/dstjr2434/ros_git/blob/master/godestination.gif" width="400" height ="400"/>
+
+### gui 구현화면1
+
 <img src = "https://github.com/dstjr2434/ros_git/blob/master/gui1.gif" width="400" height ="400"/>
+
+### gui 구현화면2
+
 <img src = "https://github.com/dstjr2434/ros_git/blob/master/gui2.gif" width="400" height ="400"/>
 
 
 >참고자료
+
 https://github.com/ntrexlab/STELLA_ODROID_C4
+
 https://github.com/ntrexlab/STELLA_REMOTE_PC_N2
+
 https://makingrobot.tistory.com/134
+
 https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/
 
 
