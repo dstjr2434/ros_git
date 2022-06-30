@@ -74,14 +74,13 @@ pyqt5
 opencv-python==4.2.0.32
 
 
-> 트러블슈팅
-
 > 의존성파일
-
-구글 catographer
-stella n2
+*구글 catographer
+*stella n2
 
 >실행예시
+<img src ="https://github.com/dstjr2434/ros_git/blob/master/wallFollow.gif" width="200" height ="400/>
+
 
 >참고자료
 https://github.com/ntrexlab/STELLA_ODROID_C4
