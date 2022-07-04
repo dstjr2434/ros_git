@@ -26,23 +26,6 @@
 4. MediaPipe,Opencv
 
 
->## 프로젝트 관리도구
-1. git, github
-  * repository 생성
-  * 프로젝트, 코드 관리
-  * ~~버전관리, 협업~~ (Slack, Notion으로 대체됨)
-    * 버전관리 및 협업 Slack, Notion 환경에서 실시
-
-2. Notion (https://funny-tracker-34e.notion.site/HOME-b09bad420f4242c2bd7d9d953949108f)
-  * Meeting Log
-  * Issue 관리
-  * Task 관리
-
-3. Slack
-  * 커뮤니케이션
-  * daily dev journal
-  * data, code 공유
-
 
 >## 요구명서세
 
@@ -81,7 +64,7 @@
   
   5. 벽을 스스로 따라 다니면서 맵을 생성할수 있는 알고리즘 구성
 
-  6. 동적 장애물 회피를 위한 D* 
+  6. 동적 장애물 회피를 위한 D* 알고리즘 구성성
 
 >## 요구사항에 대한 기술스택
 
@@ -147,11 +130,22 @@ gui 구현화면2
 </p>
 
 
->## 프로젝트 관리
-* Simulator (https://github.com/ROBOTIS-GIT/turtlebot3_simulations)
-  * 코드 테스트 및 변수 관리
-* Notion
-* Slack - 커뮤니케이션
+>## 프로젝트 관리도구
+## 1. git, github
+  * repository 생성
+  * 프로젝트, 코드 관리
+  * ~~버전관리, 협업~~ (Slack, Notion으로 대체됨)
+    * 버전관리 및 협업 Slack, Notion 환경에서 실시
+
+## 2. Notion (https://funny-tracker-34e.notion.site/HOME-b09bad420f4242c2bd7d9d953949108f)
+  * Meeting Log
+  * Issue 관리
+  * Task 관리
+
+## 3. Slack
+  * 커뮤니케이션
+  * daily dev journal
+  * data, code 공유
 
 
 ### 이슈 관리 (Notion)
@@ -194,7 +188,8 @@ gui 구현화면2
 
 >## 미구현 및 개선사항
 
-## 저장된 맵 정보를 불러온 뒤 정상적으로 작동하는 기능 구현 미완성
+### 저장된 맵 정보를 불러온 뒤 정상적으로 작동하는 기능 구현 미완성
+
   * 미완성 사유
     * Navigation Pose Estimation Issue
       * 2D맵 저장, 불러오기 기능 구현은 완성
@@ -213,7 +208,7 @@ gui 구현화면2
 
 
 
-## Full Autonomous Drive 미완성
+### Full Autonomous Drive 미완성
   * 미완성 사유
     * Wall_follower Node 기반의 완전 자동화를 구현하려고 하였으나, GUI, Remote_PC 등 분산되어 있는 처리를 통합하는 과정에서 잦은 에러 발생, 초기 계획보다 소요 시간이 길어져서 완성 시간 부족
   * How to solve
@@ -227,7 +222,7 @@ gui 구현화면2
 
 
 
-## 객체 인지 모델 정확도 부족
+### 객체 인지 모델 정확도 부족
   * 부족 사유
     * 학습 데이터 부족
       * 이미지는 충분히 확보하였으나 데이터 전처리 및 라벨링 작업에 예상되는 소요 시간이 길어 부득이하게 최소한의 데이터만으로 모델 학습 실시
@@ -236,7 +231,7 @@ gui 구현화면2
     * 유사 프로젝트 진행시, 모델 학습을 위한 데이터에 대한 검토를 프로젝트 초반부터 실시하여 데이터 확보 및 전처리에 충분한 시간 할당
 
 
-## git, github 기반 프로젝트 진행을 위한 개선점
+### git, github 기반 프로젝트 진행을 위한 개선점
   * 모듈, 패키지화
     * 프로젝트 repository 내부에 각 파트별, 기능별로 코드를 모듈, 패키지화하여 독립적으로 관리
     * 반복적으로 pull, push, merge를 해야 하는 상황에서 작업 전 pull&merge 습관화
