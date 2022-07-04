@@ -84,23 +84,23 @@ stella n2
 
  ### slam-pc 구현화면
  
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/SLAM.gif" width="400" height ="400"/>
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/SLAM.gif" width="400" height ="400"/>
 
  ### wall-follower 실제구현영상
 
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/wallFollow.gif" width="400" height ="400"/>
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/wallFollow.gif" width="400" height ="400"/>
 
 ### move 2 destination구현영상
 
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/godestination.gif" width="400" height ="400"/>
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/godestination.gif" width="400" height ="400"/>
 
 ### gui 구현화면1
 
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/gui1.gif" width="400" height ="400"/>
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/gui1.gif" width="400" height ="400"/>
 
 ### gui 구현화면2
 
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/gui2.gif" width="400" height ="400"/>
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/gui2.gif" width="400" height ="400"/>
 
 
 >참고자료
