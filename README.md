@@ -5,26 +5,29 @@
 ---
 
 
->프로젝트 배경
+>## 프로젝트 배경
+
 
 박물관 관람객들이 전시품을 관람할 때 전시품의 위치와 배경내용을 잘 알지 못하는 경우가 많습니다. 이를 위해 큐레이터가 존재하나 시간과 비용의 제약이 발생한다 판단.
 이런 제약조건을 해결하기위해 실제 존재하는 박물관 큐레이터봇과 인천공항의 안내로봇(에어스타)를 벤치마킹하였습니다.
 
->프로젝트 필수 기능
+
+
+>## 프로젝트 필수 기능
 1. 저희팀은 박물관의 구조가 변경되었을 시 실시간으로 수정 및 저장이 가능하도록 기능
 2. 박물관 내 전시품을 CAMERA로 인식 후 인공지능 Deep-learning을 활용하여 인식의 정확도 향상
 3. 관람객이 원하는 전시품으로 찾아가는 서비스
 4. 관리자 및 사용자들이 사용할 gui
 
->필수기능 구현을 위한 기술스택
+>## 필수기능 구현을 위한 기술스택
 1. AI
 2. ROS SLAM, Navigation
 3. GUI
 4. MediaPipe,Opencv
 
 
-> 프로젝트 관리도구
-1. * git, github
+>## 프로젝트 관리도구
+1. git, github
   * repository 생성
   * ~~버전관리, 협업 (미실시)~~
     * 미실시 사유 - 다른 관리도구로 대체 가능하였음
@@ -42,10 +45,10 @@
   * data, code 공유
 
 
-> 요구명서세
+>## 요구명서세
 
 
-####기능 요구사항(목적)
+### 기능 요구사항(목적)
 
 
   1.관리자가 사용할 수 있는 관리자용 gui를 구성
@@ -67,7 +70,7 @@
     2-3.자동으로 지도를 만들어주는 알고리즘
 
 
-####기능 요구사항(세부사항)
+### 기능 요구사항(세부사항)
 
   1. pyqt5를 통해 무인이동체 정면을 사용자 pc로 내보내주는 구성
   
@@ -79,7 +82,7 @@
   
   5. 벽을 스스로 따라 다니면서 맵을 생성할수 있는 알고리즘 구성
 
-> 요구사항에 대한 기술스택
+>## 요구사항에 대한 기술스택
 
 Ros1
 
@@ -92,7 +95,103 @@ pyqt5
 opencv-python==4.2.0.32
 
 
-# 미구현 및 개선사항
+>## 실행예시
+
+<p align="center">
+ turtlebot3 시뮬레이션
+</p>
+
+<p align="center">
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/simul.gif" width="400" height ="400"/>
+</p>
+
+<p align="center">
+ slam-pc 구현화면
+</p>
+
+<p align="center">
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/SLAM.gif" width="400" height ="400"/>
+</p>
+
+<p align="center">
+ wall-follower 실제구현영상
+</p>
+
+<p align="center">
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/wallFollow.gif" width="400" height ="400"/>
+</p>
+
+<p align="center">
+move 2 destination구현영상
+</p>
+
+<p align="center">
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/godestination.gif" width="400" height ="400"/>
+</p>
+
+<p align="center">
+gui 구현화면1
+</p>
+
+<p align="center">
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/gui1.gif" width="400" height ="400"/>
+</p>
+
+<p align="center">
+gui 구현화면2
+</p>
+
+<p align="center">
+<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/gui2.gif" width="400" height ="400"/>
+</p>
+
+
+>## 프로젝트 관리
+* Simulator (https://github.com/ROBOTIS-GIT/turtlebot3_simulations)
+  * 코드 테스트 및 변수 관리
+* Notion
+* Slack - 커뮤니케이션
+
+
+### 이슈 관리 (Notion)
+
+<p align="center">
+  <img src= "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/issues.png" width="400" height ="400"/>
+</p>
+<p align="center">
+  Issue Log
+</p>
+
+* Notion
+  * https://www.notion.so/924096c581d643c78881fb4c7dbbb3f5?v=d9bff0f0c53d44f2a83fa9b8618f0c5f
+  
+
+
+### 테스크 관리 (Notion)
+
+<p align="center">
+  <img src="https://github.com/dstjr2434/ros_git/blob/master/photo-doc/tasks.png"/>
+</p>
+<p align="center">
+  Task Log
+</p>
+
+* Notion
+  * https://www.notion.so/574ceb7ae62143b3847b295002abf0e2?v=8f01e42b95b64fbf84bf2470895841e6
+
+
+
+### 커뮤니케이션 관리 (Slack)
+* 커뮤니케이션
+* daily_dev_journal - 일일 개발 일지 관리
+* data, code 공유 및 버전 관리
+
+<p align="center">
+  <img src="https://github.com/dstjr2434/ros_git/blob/master/photo-doc/slack.png/">
+</p>
+
+
+>## 미구현 및 개선사항
 
 ## 저장된 맵 정보를 불러온 뒤 정상적으로 작동하는 기능 구현 미완성
   * 미완성 사유
@@ -158,7 +257,7 @@ opencv-python==4.2.0.32
 
 
 
-## References
+>## References
 
 https://github.com/ntrexlab/STELLA_REMOTE_PC_N2
   * 실습용 이동체 Stella N2 제공 모듈
@@ -228,40 +327,6 @@ https://github.com/nimbekarnd/Wall-follower-in-ROS-using-Python
 https://github.com/ssscassio/ros-wall-follower-2-wheeled-robot
   * Wall-Follower opensource
     * Wall-Follower 알고리즘 개선을 위해 참조
-
->실행예시
-
- ### slam-pc 구현화면
- 
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/SLAM.gif" width="400" height ="400"/>
-
- ### wall-follower 실제구현영상
-
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/wallFollow.gif" width="400" height ="400"/>
-
-### move 2 destination구현영상
-
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/godestination.gif" width="400" height ="400"/>
-
-### gui 구현화면1
-
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/gui1.gif" width="400" height ="400"/>
-
-### gui 구현화면2
-
-<img src = "https://github.com/dstjr2434/ros_git/blob/master/photo-doc/gui2.gif" width="400" height ="400"/>
-
-
->참고자료
-
-https://github.com/ntrexlab/STELLA_ODROID_C4
-
-https://github.com/ntrexlab/STELLA_REMOTE_PC_N2
-
-https://makingrobot.tistory.com/134
-
-https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/
-
 
 
 
